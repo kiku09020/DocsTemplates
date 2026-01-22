@@ -1,0 +1,41 @@
+properties:
+  resources:
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: Firefox
+      properties:
+        id: Mozilla.Firefox
+        source: winget
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: 7Zip
+      properties:
+        id: 7zip.7zip
+        source: winget
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: PowerToys
+      properties:
+        id: Microsoft.PowerToys
+        source: winget
+    # 開発ツール
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: VSCode
+      properties:
+        id: Microsoft.VisualStudioCode
+        source: winget
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: Git
+      properties:
+        id: Git.Git
+        source: winget
+
+    # private
+    # - resource: Microsoft.WinGet.DSC/WinGetPackage
+    #   id: Obsidian
+    #   properties:
+    #     id: Obsidian.Obsidian
+    #     source: winget
+    - resource: Microsoft.VisualStudio.Code.DSC/Extension
+      dependsOn:
+        - VSCode
+      id: Japanese Language Pack
+      properties:
+        extensionId: MS-CEINTL.vscode-language-pack-ja
